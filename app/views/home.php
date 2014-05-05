@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 			margin:0;
 			font-family:'Lato', sans-serif;
 			text-align:center;
-			color: #999;
+			color: #f00;
 		}
 
 		.welcome {
