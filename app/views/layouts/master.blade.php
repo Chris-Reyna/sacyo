@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <div class="navbar-wrapper">
+    <!-- <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
           <div class="container">
@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     @yield('content')
 
