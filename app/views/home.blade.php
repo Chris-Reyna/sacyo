@@ -17,7 +17,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>SCORE!!</h1>
-              <p>Promoting motor skills and positive coping through sports and religion.</p>
+              <p>Promoting motor skills and positive coping skills through sports and religion.</p>
               <p><a class="carousel_btn btn-lg btn-primary" href="https://isis.sportspilot.com/register/Family/Default.asp?ASOID=106044" role="button">Sign up today</a></p>
             </div>
           </div>
@@ -26,9 +26,8 @@
           <img src="img/2014bcc.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="carousel_btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>2014 PeeWee 1 Basketball City Champs!!</h1>
+              <p><a class="carousel_btn btn-lg btn-primary" href="#" role="button">Dead button</a></p>
             </div>
           </div>
         </div>
@@ -36,8 +35,7 @@
           <img src="img/tinysoccer2.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>2013 Tiny 1 Soccer West Zone Champs!!</h1>
               <p><a class="carousel_btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
