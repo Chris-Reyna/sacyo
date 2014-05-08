@@ -85,11 +85,12 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">What is CYO?<span class="text-muted">Catholic Youth Organization</span></h2>
+          <p class="lead">CYO Sports is a parish based program open to all children and adolescents, regardless of race, religion, national origin, family or economic status. It serves over 13, 000 children and adolescents annually in 60 athletic associations with the help of over 5000 adult volunteers.</p>
+          <p class="lead"><strong>The Misssion:</strong>To offer all youth, sports and recreation programs emphasizing friendly competition through good sportsmanship "modeled" by adult participants. To invite all participants, Catholic and otherwise, youth and adults, to share in the life of their church and faith community.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive" src="img/cyologo1.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
@@ -97,10 +98,10 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive" src="img/priest.jpg" alt="Generic placeholder image">
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <h2 class="featurette-heading">Where is St. Ann's Catholic Church? <span class="text-muted">210 St.Ann St., San Antonio, TX 78201</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
       </div>
