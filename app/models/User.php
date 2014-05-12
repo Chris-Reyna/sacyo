@@ -17,6 +17,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
+
+		/**
+	*Relationship for many children
+	*/
+	public function posts()
+	{
+		return $this->hasMany('child');
+	}
+
 	protected $hidden = array('password');
 
 	/**
