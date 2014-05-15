@@ -18,7 +18,7 @@
             <div class="carousel-caption">
               <h1>SCORE!!</h1>
               <p>Promoting motor skills and positive coping skills through sports and religion.</p>
-              <p><a class="carousel_btn btn-lg btn-primary" href="https://isis.sportspilot.com/register/Family/Default.asp?ASOID=106044" role="button">Sign up today</a></p>
+              <p><a class="carousel_btn btn-lg btn-primary" href="https://isis.sportspilot.com/register/Family/Default.asp?ASOID=106044" role="button">Register with Sportspilot</a></p>
             </div>
           </div>
         </div>
