@@ -69,7 +69,7 @@ a:hover.btn.btn-primary, .btn.btn-primary {
                         </div>
                         <div>
                             <label>Phone Number </label>
-                            <div><input type="text" name="first" size=4 maxlength=3 class ="span3">-<input type="text" name="second" size=4 maxlength=3 class ="span3">-<input type="text" name="third" size=5 maxlength=4 class ="span3"></div>
+                            <div><input type="text" name="phone" size=4 maxlength=3 class ="span3">-<input type="text" name="second" size=4 maxlength=3 class ="span3">-<input type="text" name="third" size=5 maxlength=4 class ="span3"></div>
                         </div>
                         <br>
                         <div class = "container">
