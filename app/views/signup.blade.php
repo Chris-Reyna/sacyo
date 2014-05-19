@@ -35,7 +35,7 @@ a:hover.btn.btn-primary, .btn.btn-primary {
             <div>
                 
 
-                <form class= "SUform">
+                <form action= "UsersController@store" method= "GET"class= "SUform">
                     <div class="row">
                     <div class="col-md-6">
                         <h3>Why sign up with St. Ann's before registering in Sportspiolot?</h3>
@@ -69,7 +69,7 @@ a:hover.btn.btn-primary, .btn.btn-primary {
                         </div>
                         <div>
                             <label>Phone Number </label>
-                            <div><input type="text" name="phone" size=4 maxlength=3 class ="span3">-<input type="text" name="second" size=4 maxlength=3 class ="span3">-<input type="text" name="third" size=5 maxlength=4 class ="span3"></div>
+                            <div><input type="text" name="phone" class ="span3"></div>
                         </div>
                         <br>
                         <div class = "container">
