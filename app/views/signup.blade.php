@@ -9,7 +9,11 @@ body{
  .SUform{
     color: #000;
     background-color: #999;
-    border-radius: 15px;
+    
+    -webkit-box-shadow: 0 8px 75px -6px black;
+    -moz-box-shadow: 0 8px 75px -6px black;
+    box-shadow: 0 8px 75px -6px black;
+    padding: 50px;
  }
 a:hover.btn.btn-primary, .btn.btn-primary {
     color: #fff;
@@ -19,6 +23,10 @@ a:hover.btn.btn-primary, .btn.btn-primary {
 }
 .formtext{
     float: right;
+}
+
+input{
+   border-style: solid; 
 }
 
 
@@ -31,15 +39,15 @@ a:hover.btn.btn-primary, .btn.btn-primary {
 <body>
     <div class="container">
         <div class="span3">
-            <h2>Sign Up</h2>
             <div>
                 
 
-                <form action= "UsersController@store" method= "GET"class= "SUform">
+                <form action= "UsersController@store" method= "GET"class= "SUform" >
                     <div class="row">
                     <div class="col-md-6">
                         <h3>Why sign up with St. Ann's before registering in Sportspiolot?</h3>
                         <p class= "text-left">By signing up with the Parish program, this allows a board member to contact you and ask any questions you may have about CYO and a specific team before registering with on Sportpilot website. This will also make it easier for board members to contact you throughout the season and in between individual seasons.</p>
+                        <img src="img/who.jpg" alt="Small pic">
                     </div>
                     <div class="col-md-6">
                         <div>
@@ -79,7 +87,6 @@ a:hover.btn.btn-primary, .btn.btn-primary {
                         </div>
                     </div>
                     <br>
-                </div>
                 </form>
             </div>
         </div>
