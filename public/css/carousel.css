@@ -59,6 +59,14 @@ body {
   background-color: #000;
   color: #ffff00;
 }
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
+  color: #ffff00; 
+  background-color: transparent;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+color: #ffff00;
+background-color: transparent;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
