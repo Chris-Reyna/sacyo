@@ -28,8 +28,75 @@ a:hover.btn.btn-primary, .btn.btn-primary {
 input{
    border-style: solid; 
 }
+/*Whodat pic animation*/
+.animated { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+} 
 
+@-webkit-keyframes rollIn { 
+    0% { opacity: 0; -webkit-transform: translateX(-100%) rotate(-120deg); } 
+    100% { opacity: 1; -webkit-transform: translateX(0px) rotate(0deg); } 
+} 
+@keyframes rollIn { 
+    0% { opacity: 0; transform: translateX(-100%) rotate(-120deg); } 
+    100% { opacity: 1; transform: translateX(0px) rotate(0deg); } 
+} 
+.rollIn { 
+    -webkit-animation-name: rollIn; 
+    animation-name: rollIn; 
+}
+/*end whodat*/
+/*form animation*/
 
+.animated { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+} 
+
+@-webkit-keyframes bounceInRight { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateX(2000px); 
+    } 
+    60% { 
+        opacity: 1; 
+        -webkit-transform: translateX(-30px); 
+    } 
+    80% { 
+        -webkit-transform: translateX(10px); 
+    } 
+    100% { 
+        -webkit-transform: translateX(0); 
+    } 
+} 
+
+@keyframes bounceInRight { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(2000px); 
+    } 
+    60% { 
+        opacity: 1; 
+        transform: translateX(-30px); 
+    } 
+    80% { 
+        transform: translateX(10px); 
+    } 
+    100% { 
+        transform: translateX(0); 
+    } 
+} 
+
+.bounceInRight { 
+    -webkit-animation-name: bounceInRight; 
+    animation-name: bounceInRight; 
+}
+/*fornm end*/
 </style>
 @stop
 
@@ -47,8 +114,9 @@ input{
                     <div class="col-md-6">
                         <h3>Why sign up with St. Ann's before registering in Sportspiolot?</h3>
                         <p class= "text-left">By signing up with the Parish program, this allows a board member to contact you and ask any questions you may have about CYO and a specific team before registering with on Sportpilot website. This will also make it easier for board members to contact you throughout the season and in between individual seasons.</p>
-                        <img src="img/who.jpg" alt="Small pic">
+                        <img id="animated-example" class="animated rollIn" src="img/who.jpg" alt="Small pic">
                     </div>
+                    <div id="animated-example" class="animated bounceInRight">
                     <div class="col-md-6">
                         <div>
                             <label>First Name</label>
@@ -85,6 +153,7 @@ input{
                                 <input type="submit" value="Sign up" class="btn btn-primary ">  
                             </div>
                         </div>
+                    </div>
                     </div>
                     <br>
                 </form>
