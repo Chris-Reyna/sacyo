@@ -5,6 +5,7 @@
     <title>ST. ANN's CYO</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
 
     @yield('topscript')
     
