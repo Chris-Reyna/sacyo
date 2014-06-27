@@ -25,4 +25,6 @@ class HomeController extends BaseController {
 		return View::make('signup');
 	}
 
+	// this is where logic can be added ex. if login shoThisPage else showThatpage
+
 }
