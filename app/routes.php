@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'HomeController@showHome');
-Route::get('/signup', 'HomeController@showSignup');
+Route::get('signup', 'HomeController@showSignup');
 Route::resource('users', 'UsersController');
