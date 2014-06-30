@@ -17,8 +17,8 @@ Route::resource('users', 'UsersController');
 Route::resource('posts', 'PostsController');
 Route::get('orm-test', function () {
     // test code here
-    $post = new Post();
-    $post-> = 'New Blog Post';
-    print_r($post);
+    
+	$post = Post::find(1);
+	return $post;
 
 });
