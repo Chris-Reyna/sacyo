@@ -3,19 +3,30 @@
 @section('content')
 
 
+<div class= "container">
+	<h1 id="mboardheader">St. Ann's CYO Message Board</h1>
+	<div class= 'mboard'>
+		<table class="table table-striped">
+			<tr class="mboardtablehead">
+				<th>TITLE</th>
+				<th>DATE</th>
+				<th>MESSAGE</th>
+			</tr>
+		@foreach($posts as $post)		
+			<tr>
+				<td>{{{ $post->title }}}</td>
+				<td>{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A ') }}}</td>
+				<td> {{{ $post->message }}}</td>
+			</tr>			
+		@endforeach					
+		</table>
+	
 
-@foreach($posts as $post)		
-<div class="blog-post">
-	<h2 class="blog-post-title">{{{ $post->title }}}</h2>
-	<p class="blog-post-meta">{{{ $post->created_at }}}</p>
-	<p> {{{ $post->message }}}</p>
-</div>			
-@endforeach					
 
-
-
-
-
-
-
+		
+	</div>
+</div>
+<div>
+	{{ $posts->links() }}
+</div>
 @stop
