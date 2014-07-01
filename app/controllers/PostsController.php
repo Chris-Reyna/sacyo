@@ -10,8 +10,8 @@ class PostsController extends BaseController {
 	public function index()
 	{
 		//function to show all posts
-		$posts = Post::all();
-		return View::make('posts.index')->with('posts', $posts);
+		$posts = Post::orderBy('created_at','desc')->paginate(4);
+    	return View::make('posts.index')->with(array('posts' => $posts));
 	}
 
 
@@ -22,8 +22,8 @@ class PostsController extends BaseController {
 	 */
 	public function create()
 	{
-		//function to create a post
-		return View::make('posts.create');
+		//function to create a post 
+		return View::make('posts.create-edit');
 	}
 
 
@@ -33,9 +33,22 @@ class PostsController extends BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//function to save the posts
-		return Redirect::back()->withInput();
+	{	
+
+		//adding validator
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		if ($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+
+		}else{
+			//function to save the posts
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->message = Input::get('message');
+			$post->save();
+			return Redirect::action('PostsController@index');
+		}
 	}
 
 
@@ -64,6 +77,9 @@ class PostsController extends BaseController {
 	public function edit($id)
 	{
 		//edit an individual post
+		$post = Post::findOrFail($id);
+		
+		return View::make('posts.create-edit')->with('post', $post);
 	}
 
 
@@ -76,6 +92,21 @@ class PostsController extends BaseController {
 	public function update($id)
 	{
 		//update an individual post
+		$post = Post::findOrFail($id);
+
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		if ($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+
+		}else{
+			//function to save the posts
+			$post->title = Input::get('title');
+			$post->message = Input::get('message');
+			$post->save();
+
+			return Redirect::action('PostsController@show', $post->id);
+		}
 	}
 
 
