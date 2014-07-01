@@ -1,6 +1,6 @@
 <?php
 
-class UsersController.php extends BaseController {
+class UsersController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,6 +10,8 @@ class UsersController.php extends BaseController {
 	public function index()
 	{
 		//
+		//function to home
+		return View::make('home');
 	}
 
 
@@ -21,6 +23,8 @@ class UsersController.php extends BaseController {
 	public function create()
 	{
 		//
+		//function to create a user
+		return View::make('users.create');
 	}
 
 
@@ -31,45 +35,27 @@ class UsersController.php extends BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::all();
-		Log::info($input);
-		$user = User::findOrFail($id);
-		// create the validator
-    	$validator = Validator::make($input, User::$rules);
-	
-    	// attempt validation
-    	if ($validator->fails())
-    	{
-    	    // validation failed, redirect to the user signup page with validation errors and old inputs
-    	    Session::flash('errorMessage', 'User was NOT Created Successfully!!');
-    	    return Redirect::back()->withInput()->withErrors($validator);
-    	}
-    	}
-    	else
-    	{
-        	// validation succeeded, create and save the user
+        //adding validator
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		if ($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+
+		}else{
     		//Save to DB
-    		//add image
-    		
-    		$firstname = Input::get('firstname');
-			$lastname = Input::get('lastname');
-			$relationship = Input::get('relationship');
-			$email = Input::get('email');
-			$address = Input::get('address');
-			$password = Input::get('password');
-			$phone = Input::get('phone');
-			$user->firstname = $firstname;
-			$user->lastname = $lastname;
-			$user->relationship = $relationship;
-			$user->email = $email;
-			$user->address = $address;
-			$user->password = $password;
-			$user->phone = $phone;
+			$user = new User();
+			$user->first_name = Input::get('firstname');
+			$user->last_name = Input::get('lastname');
+			$user->relationship = Input::get('relationship');
+			$user->email = Input::get('email');
+			$user->address = Input::get('address');
+			$user->password = Input::get('password');
+			$user->phone = Input::get('phone');
 			$user->save();
 			Session::flash('successMessage', 'User Created Successfully');
-			return Redirect::action('HomeController@showHome');
-    	}
-	}
+			return Redirect::action('UsersController@index');
+		}
+	}	
 
 
 	/**
@@ -80,7 +66,10 @@ class UsersController.php extends BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		//function to show an individual user
+		$user = Post::findOrFail($id);
+		//show a post for /posts/show/id
+		return View::make('users.show')->with('user', $user);
 	}
 
 
