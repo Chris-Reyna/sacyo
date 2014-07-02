@@ -34,7 +34,7 @@
 	<div class="row "id="Mform" >
 		<div class="col-md-6">
 			@if (isset($post))
-			{{ Form::open(array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+			{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
 			@else
 			{{ Form::open(array('action' => 'PostsController@store')) }}
 			@endif
@@ -49,7 +49,6 @@
 					{{ Form::label('message', 'Message') }}
 					<br>
 					{{ Form::textarea('message', null, ['size' => '70x15','id' => 'message']) }}
-					
 				</div>
 				<button type="submit">Create New Post</button>
 			{{ Form::close() }}

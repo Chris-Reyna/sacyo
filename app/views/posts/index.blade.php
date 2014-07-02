@@ -27,6 +27,9 @@
 	</div>
 </div>
 <div>
+	<div>
+	<a href= "{{{ action('PostsController@create')}}}" class="btn btn-default btn-lg active">Create New Message</a>
+</div>
 	{{ $posts->links() }}
 </div>
 @stop

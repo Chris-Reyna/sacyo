@@ -27,7 +27,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{action('HomeController@showHome')}}">Home</a></li>
+        <li class="active"><a href="{{action('PostsController@index')}}">Message Board</a></li>
         <li><a href="{{action('UsersController@create')}}">Register with St.Ann's</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -35,7 +35,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
+            <li><a href="{{action('HomeController@showLogin')}}">Login</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li><a href="#">Separated link</a></li>
@@ -45,6 +45,14 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+ <div class="container" id="main-content">
+  @if (Session::has('successMessage'))
+  <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+  @endif
+  @if (Session::has('errorMessage'))
+  <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+  @endif
+</div>
 
     @yield('content')
 

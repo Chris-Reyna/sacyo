@@ -1,7 +1,14 @@
 <?php
 
 class UsersController extends BaseController {
-
+	public function __construct()
+	{
+	    // call base controller constructor
+	    parent::__construct();
+	
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -11,7 +18,8 @@ class UsersController extends BaseController {
 	{
 		//
 		//function to home
-		return View::make('home');
+		$users = User::orderBy('created_at','desc')->paginate(4);
+    	return View::make('users.index')->with(array('users' => $users));
 	}
 
 
@@ -24,7 +32,7 @@ class UsersController extends BaseController {
 	{
 		//
 		//function to create a user
-		return View::make('users.create');
+		return View::make('users.create-edit');
 	}
 
 
@@ -36,9 +44,10 @@ class UsersController extends BaseController {
 	public function store()
 	{
         //adding validator
-		$validator = Validator::make(Input::all(), Post::$rules);
+		$validator = Validator::make(Input::all(), User::$rules);
 
 		if ($validator->fails()){
+			Session::flash('errorMessage', 'User was NOT Saved Successfully!!');
 			return Redirect::back()->withInput()->withErrors($validator);
 
 		}else{
@@ -52,7 +61,8 @@ class UsersController extends BaseController {
 			$user->password = Input::get('password');
 			$user->phone = Input::get('phone');
 			$user->save();
-			Session::flash('successMessage', 'User Created Successfully');
+
+			Session::flash('successMessage', 'User Created Successfully!!');
 			return Redirect::action('UsersController@index');
 		}
 	}	
@@ -67,8 +77,8 @@ class UsersController extends BaseController {
 	public function show($id)
 	{
 		//function to show an individual user
-		$user = Post::findOrFail($id);
-		//show a post for /posts/show/id
+		$user = User::findOrFail($id);
+		//show a post for /user/show/id
 		return View::make('users.show')->with('user', $user);
 	}
 
@@ -81,7 +91,10 @@ class UsersController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		//edit an individual user
+		$user = User::findOrFail($id);
+		
+		return View::make('users.create-edit')->with('user', $user);
 	}
 
 
@@ -93,7 +106,31 @@ class UsersController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		//update an individual post
+		$user = User::findOrFail($id);
+
+		$validator = Validator::make(Input::all(), User::$rules);
+
+		if ($validator->fails()){
+
+			Session::flash('errorMessage', 'Profile was NOT Updated Successfully!!');
+			return Redirect::back()->withInput()->withErrors($validator);
+
+		}else{
+			//function to save the users to DB
+			$user->first_name = Input::get('firstname');
+			$user->last_name = Input::get('lastname');
+			$user->relationship = Input::get('relationship');
+			$user->email = Input::get('email');
+			$user->address = Input::get('address');
+			$user->password = Input::get('password');
+			$user->phone = Input::get('phone');
+			$user->save();
+
+			Session::flash('successMessage', 'Profile Updated Successfully');
+			return Redirect::action('UsersController@show', $user->id);
+		}
+	
 	}
 
 

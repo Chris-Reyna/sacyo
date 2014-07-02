@@ -2,6 +2,15 @@
 
 class PostsController extends BaseController {
 
+
+	public function __construct()
+	{
+	    // call base controller constructor
+	    parent::__construct();
+	
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -38,15 +47,21 @@ class PostsController extends BaseController {
 		//adding validator
 		$validator = Validator::make(Input::all(), Post::$rules);
 
-		if ($validator->fails()){
+		if ($validator->fails())
+		{
+			Session::flash('errorMessage', 'Message was NOT Posted Successfully!!');
 			return Redirect::back()->withInput()->withErrors($validator);
 
-		}else{
+		} 
+		else
+		{
 			//function to save the posts
 			$post = new Post();
 			$post->title = Input::get('title');
 			$post->message = Input::get('message');
 			$post->save();
+
+			Session::flash('successMessage', 'Message posted Successfully');
 			return Redirect::action('PostsController@index');
 		}
 	}
@@ -97,14 +112,19 @@ class PostsController extends BaseController {
 		$validator = Validator::make(Input::all(), Post::$rules);
 
 		if ($validator->fails()){
+
+			Session::flash('errorMessage', 'Message was NOT Updated Successfully!!');
 			return Redirect::back()->withInput()->withErrors($validator);
 
-		}else{
+		}
+		else
+		{
 			//function to save the posts
 			$post->title = Input::get('title');
 			$post->message = Input::get('message');
 			$post->save();
 
+			Session::flash('successMessage', 'Message Updated Successfully');
 			return Redirect::action('PostsController@show', $post->id);
 		}
 	}

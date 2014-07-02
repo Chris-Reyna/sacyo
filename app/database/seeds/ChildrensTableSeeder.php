@@ -1,6 +1,7 @@
+
 <?php
 
-class ChildrensTableSeeder extends Seeder {
+class ChildrensTableSeeder extends DatabaseSeeder {
 	public function run() {
 		DB::table('childrens')->delete();
 

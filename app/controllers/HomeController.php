@@ -26,5 +26,28 @@ class HomeController extends BaseController {
 	}
 
 	// this is where logic can be added ex. if login shoThisPage else showThatpage
+	public function showLogin()
+	{
+		return View::make('login');
+	}
+	public function doLogin()
+	{
+		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
+		{
+    		return Redirect::intended('/posts');
+		}
+		else
+		{
+    		// login failed, go back to the login screen
+			return Redirect::back()->withInput();
+		}
+	}
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::action('PostsController@index');
+	}
+
+
 
 }

@@ -12,13 +12,9 @@
 */
 
 Route::get('/', 'HomeController@showHome');
-Route::get('signup', 'HomeController@showSignup');
 Route::resource('users', 'UsersController');
 Route::resource('posts', 'PostsController');
-Route::get('orm-test', function () {
-    // test code here
-    
-	$post = Post::find(1);
-	return $post;
+Route::get('login', 'HomeController@showLogin');
+Route::post('/login', 'HomeController@doLogin');
+Route::get('/logout', 'HomeController@logout');
 
-});

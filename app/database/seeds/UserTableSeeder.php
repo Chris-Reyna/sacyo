@@ -1,6 +1,6 @@
 <?php
 
-class UserTableSeeder extends Seeder {
+class UserTableSeeder extends DatabaseSeeder {
 	public function run() {
 		DB::table('users')->delete();
 
@@ -10,7 +10,7 @@ class UserTableSeeder extends Seeder {
 		$user->relationship = 'Father';
 		$user->email = 'tobyreyna@gmail.com';
 		$user->address = '1402 W. Mistletoe Ave.';
-		$user->password = 'password';
+		$user->password = Hash::make('password');
 		$user->phone = '210-452-5557';
 		$user->is_admin = true;
 		$user->save();

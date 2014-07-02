@@ -12,11 +12,15 @@ body{
 
 @section('content')
 <body>
+
     <div class="container">
         <div class="span3">
             <div>
-                {{ Form::open(array('action' => 'UsersController@store', 'class' => 'SUform')) }}
-                <form action="{{{ action('UsersController@store') }}}" method= "POST"class= "SUform" >
+                @if (isset($user))
+                    {{ Form::model($user, array('action' => array('UsersController@update', $user->id), 'class' => 'SUform', 'method' => 'PUT')) }}
+                @else
+                    {{ Form::open(array('action' => 'UsersController@store', 'class' => 'SUform')) }}
+                @endif
                     <div class="row">
                     <div class="col-md-6">
                         <h3>Why sign up with St. Ann's before registering in Sportspiolot?</h3>
@@ -28,12 +32,12 @@ body{
                             <div>
                                 {{ $errors->first('firstname', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('firstname', 'First Name') }}
-                                <div>{{ Form::text('firstname', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::text('first_name', null, array('class' => 'span3')) }}</div>
                                 
                             <div>
                                 {{ $errors->first('lastname', '<span class= "help">:message</span>')}}<br>
-                                {{ Form::label('firstname', 'Last Name') }}
-                                <div>{{ Form::text('lasttname', null, array('class' => 'span3')) }}</div>
+                                {{ Form::label('lastname', 'Last Name') }}
+                                <div>{{ Form::text('last_name', null, array('class' => 'span3')) }}</div>
                             </div>
                             <div>
                                 {{ $errors->first('relationship', '<span class= "help">:message</span>')}}<br>
@@ -42,17 +46,17 @@ body{
                             <div>
                                 {{ $errors->first('email', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('email', 'Email Address') }}
-                                <div>{{ Form::text('relationship', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::text('email', null, array('class' => 'span3')) }}</div>
                             </div>
                             <div>
                                 {{ $errors->first('address', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('address', 'Address with Zipcode') }}
-                                <div>{{ Form::text('relationship', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::text('address', null, array('class' => 'span3')) }}</div>
                             </div>
                             <div>
                                 {{ $errors->first('password', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('password', 'Password (Between 8 and 12 characters)') }}
-                                <div>{{ Form::text('relationship', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::text('password', null, array('class' => 'span3')) }}</div>
                             </div>
                             <div>
                                 {{ $errors->first('phone', '<span class= "help">:message</span>')}}<br>
@@ -62,14 +66,13 @@ body{
                             <br>
                             <div>
                                 <div>
-                                    <button type="submit" class="btn btn-primary ">Create New Post</button>  
+                                    <button type="submit" class="btn btn-primary ">Create Profile</button>  
                                 </div>
                             </div>
                         </div>
                     </div>
                     <br>
                     {{ Form::close() }}
-                </form>
             </div>
         </div>
     </div>
