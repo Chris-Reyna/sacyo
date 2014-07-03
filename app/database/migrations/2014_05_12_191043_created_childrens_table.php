@@ -20,8 +20,8 @@ class CreatedChildrensTable extends Migration {
 			$table->string('last_name', 50);
 			$table->string('gender', 10);
 			$table->string('DOB', 25);
-			$table->integer('child_id')->unsigned();
-			$table->foreign('child_id')->references('id')->on('users');
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}
@@ -34,6 +34,7 @@ class CreatedChildrensTable extends Migration {
 	public function down()
 	{
 		//
+		Schema::drop('childrens');
 	}
 
 }
