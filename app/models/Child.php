@@ -14,7 +14,7 @@ class Child extends BaseModel implements UserInterface, RemindableInterface {
 
 
 	 public function user()
-	{
+	{							//model name
     	return $this->belongsTo('User');
 	}
 
