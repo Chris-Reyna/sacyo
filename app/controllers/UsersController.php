@@ -5,9 +5,11 @@ class UsersController extends BaseController {
 	{
 	    // call base controller constructor
 	    parent::__construct();
-	
+		 // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth', ['except' => ['create']]);
+	    $this->beforeFilter('post.protect', ['only' => ['edit', 'update', 'destroy']]);
 	    // run auth filter before all methods on this controller except index and show
-	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	    // $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
 	}
 	/**
 	 * Display a listing of the resource.
@@ -18,8 +20,10 @@ class UsersController extends BaseController {
 	{
 		//
 		//function to home
-		$users = User::orderBy('created_at','desc')->paginate(4);
+		$users = User::paginate(2);
     	return View::make('users.index')->with(array('users' => $users));
+    	// return 'test this out';
+    	// return View::make('users.index');
 	}
 
 

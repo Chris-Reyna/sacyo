@@ -9,7 +9,8 @@ class PostsController extends BaseController {
 	    parent::__construct();
 	
 	    // run auth filter before all methods on this controller except index and show
-	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	    $this->beforeFilter('auth', ['except' => ['index', 'show']]);
+	    $this->beforeFilter('post.protect', ['only' => ['edit', 'update', 'destroy']]);
 	}
 	/**
 	 * Display a listing of the resource.
@@ -18,9 +19,21 @@ class PostsController extends BaseController {
 	 */
 	public function index()
 	{
-		//function to show all posts
-		$posts = Post::orderBy('created_at','desc')->paginate(4);
+		//search by title 
+		$search = Input::get('search');
+	
+		if ($search){
+	
+			$posts = Post::with('user')->where('title','LIKE', "%{$search}%")->orWhere('message', 'LIKE',"%{$search}%")->paginate(4);
+	
+		}else{
+			
+			//function to show all posts
+			$posts = Post::with('user')->orderBy('created_at','desc')->paginate(4);
+		}
     	return View::make('posts.index')->with(array('posts' => $posts));
+
+    	
 	}
 
 
@@ -139,6 +152,9 @@ class PostsController extends BaseController {
 	public function destroy($id)
 	{
 		//delete an individual post
+		$post = Post::findOrFail($id);
+		$post->delete();
+		return Redirect::action('PostsController@index');
 	}
 
 
