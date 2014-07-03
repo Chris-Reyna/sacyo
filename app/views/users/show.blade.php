@@ -2,8 +2,9 @@
 
 @section('content')	
 
+<div class= "container">
 <h1>Parent Information</h1>	
-<div class= 'mboard'>
+	<div class= 'mboard'>
 		<table class="table table-striped">
 			<tr class="mboardtablehead">
 				<th>SIGNUP DATE</th>
@@ -24,5 +25,19 @@
 				<td> {{{ $user->address }}}</td>
 				<td> {{{ $user->phone}}}</td>
 			</tr>							
-		</table>		
+		</table>
+	</div>	
+</div>
+<hr>
+<div>
+		@if (Auth::check())
+		@if (Auth::user()->canManagePost($post))
+		<a href= "" id="btnDeletePost" >Delete Post</a> |
+	
+		<a href= "{{{ action('UsersController@edit', $user->id)}}}">Edit Post</a> |
+		@endif
+		@endif
+		<a class='links' href= "{{{ action('UsersController@index')}}}">Return to Parent Listing</a>
+		
+	</div>		
 @stop

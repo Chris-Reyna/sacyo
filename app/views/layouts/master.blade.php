@@ -55,7 +55,7 @@
 </div>
 
     @yield('content')
-
+    <div><a class='links' href="{{ URL::previous() }}">Go Back</a></div>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/docs.min.js"></script>

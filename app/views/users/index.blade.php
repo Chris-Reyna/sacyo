@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('content')		
+@section('content')	
 	<h1>List of Parents</h1>
 	<div class='mboard'>
 		<table class="table table-striped">
@@ -12,7 +12,6 @@
 				<th>EMAIL</th>
 				<th>ADDRESS</th>
 				<th>PHONE</th>
-				
 			</tr>
 		@foreach($users as $user)		
 			<tr>
@@ -27,8 +26,10 @@
 		@endforeach					
 		</table>	
 	</div>
+	<hr>
 	<div>
-	{{ $posts->links() }}
+	{{ $users->links() }}
 	</div>
+
 @stop
 

@@ -9,6 +9,14 @@
     width: 100%;
 }
 
+.links{
+    color: #FFF;
+}
+
+.links2{
+    color: #000;
+}
+
 form.form-signin {
     width: 300px;
     margin: 0 auto;
