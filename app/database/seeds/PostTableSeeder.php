@@ -25,7 +25,7 @@ class PostTableSeeder extends DatabaseSeeder {
         $post3 = new Post();
         $post3->title = 'Veganism by bacon';
         $post3->message = 'Bacon ipsum dolor sit amet rump voluptate bacon do enim drumstick. In cow ground round landjaeger magna sint beef non filet mignon. Beef ribs beef pork belly leberkas, pork cupidatat ad nulla in tempor t-bone hamburger proident qui rump. Eu velit kevin cillum ullamco shankle dolore enim in pork chop exercitation minim. Cillum chuck aliquip, filet mignon aliqua leberkas veniam pancetta strip steak irure prosciutto ribeye in ut anim. Turducken voluptate swine enim, magna irure brisket ea reprehenderit exercitation.';
-        $post3->user_id = 1;
+        $post3->user_id = 2;
         $post3->save();
 
         $post4 = new Post();
