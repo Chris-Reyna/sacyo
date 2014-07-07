@@ -20,9 +20,9 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function showSignup()
+	public function showCreate()
 	{
-		return View::make('signup');
+		return View::make('create');
 	}
 
 	// this is where logic can be added ex. if login shoThisPage else showThatpage
@@ -34,12 +34,13 @@ class HomeController extends BaseController {
 	{
 		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
 		{
-    		return Redirect::intended('/posts');
+    		return Redirect::action('PostsController@index');
 		}
 		else
 		{
     		// login failed, go back to the login screen
-			return Redirect::back()->withInput();
+    		Session::flash('errorMessage', 'Email or Password not found.');
+			return Redirect::action('HomeController@Login');
 		}
 	}
 	public function logout()
