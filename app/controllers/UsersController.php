@@ -67,7 +67,7 @@ class UsersController extends BaseController {
 			$user->save();
 
 			Session::flash('successMessage', 'User Created Successfully!!');
-			return Redirect::action('HomeController@showHome');
+			return Redirect::action('UsersController@show', $user->id);
 		}
 	}	
 
