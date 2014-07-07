@@ -32,12 +32,12 @@ body{
                             <div>
                                 {{ $errors->first('firstname', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('firstname', 'First Name') }}
-                                <div>{{ Form::text('first_name', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::text('firstname', null, array('class' => 'span3')) }}</div>
                                 
                             <div>
                                 {{ $errors->first('lastname', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('lastname', 'Last Name') }}
-                                <div>{{ Form::text('last_name', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::text('lastname', null, array('class' => 'span3')) }}</div>
                             </div>
                             <div>
                                 {{ $errors->first('relationship', '<span class= "help">:message</span>')}}<br>
@@ -56,7 +56,7 @@ body{
                             <div>
                                 {{ $errors->first('password', '<span class= "help">:message</span>')}}<br>
                                 {{ Form::label('password', 'Password (Between 8 and 12 characters)') }}
-                                <div>{{ Form::text('password', null, array('class' => 'span3')) }}</div>
+                                <div>{{ Form::password('password', null, array('class' => 'span3')) }}</div>
                             </div>
                             <div>
                                 {{ $errors->first('phone', '<span class= "help">:message</span>')}}<br>
