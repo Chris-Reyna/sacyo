@@ -13,6 +13,15 @@ class Child extends BaseModel implements UserInterface, RemindableInterface {
 	protected $table = 'childrens';
 
 
+	//Validation rules for our properties
+	static public $rules =[
+		'firstname' => 'required | max:50',
+		'lastname' => 'required | max:50',
+		'gender' => 'required | max:20',
+		'DOB' => 'required | max:10'
+	];
+
+
 	 public function user()
 	{							//model name
     	return $this->belongsTo('User');
