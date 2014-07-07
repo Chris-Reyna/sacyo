@@ -24,6 +24,8 @@
 				<td> {{{ $user->email }}}</td>
 				<td> {{{ $user->address }}}</td>
 				<td> {{{ $user->phone}}}</td>
+
+				{{{ $user->children->first_name }}}
 			</tr>							
 		</table>
 	</div>	
@@ -31,7 +33,7 @@
 <hr>
 <div>
 		@if (Auth::check())
-		@if (Auth::user()->canManagePost($post))
+		@if (Auth::user()->canManagePost($user))
 		<a href= "" id="btnDeletePost" >Delete Post</a> |
 	
 		<a href= "{{{ action('UsersController@edit', $user->id)}}}">Edit Post</a> |
