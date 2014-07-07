@@ -10,7 +10,7 @@ class UserTableSeeder extends DatabaseSeeder {
 		$user->relationship = 'Father';
 		$user->email = 'tobyreyna@gmail.com';
 		$user->address = '1402 W. Mistletoe Ave.';
-		$user->password = Hash::make('password');
+		$user->password = 'password';
 		$user->phone = '210-452-5557';
 		$user->is_admin = true;
 		$user->save();
@@ -21,7 +21,7 @@ class UserTableSeeder extends DatabaseSeeder {
 		$user1->relationship = 'Uncle';
 		$user1->email = 'christopher.reyna@yahoo.com';
 		$user1->address = '1410 W. Mistletoe Ave.';
-		$user1->password = Hash::make('12345678');
+		$user1->password = '12345678';
 		$user1->phone = '210-573-8357';
 		$user1->is_admin = false;
 		$user1->save();
