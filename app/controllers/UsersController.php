@@ -67,7 +67,7 @@ class UsersController extends BaseController {
 			$user->save();
 
 			Session::flash('successMessage', 'User Created Successfully!!');
-			return Redirect::action('UsersController@index');
+			return Redirect::action('HomeController@showHome');
 		}
 	}	
 
@@ -81,7 +81,7 @@ class UsersController extends BaseController {
 	public function show($id)
 	{
 		//function to show an individual user
-		$user = User::findOrFail($id);
+		$user = User::with('children')->findOrFail($id);
 		//show a post for /user/show/id
 		return View::make('users.show')->with('user', $user);
 	}
