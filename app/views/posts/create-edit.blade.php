@@ -50,7 +50,11 @@
 					<br>
 					{{ Form::textarea('message', null, ['size' => '70x15','id' => 'message']) }}
 				</div>
+				@if (isset($post))
+				<button type="submit">Edit Post</button>
+				@else
 				<button type="submit">Create New Post</button>
+				@endif
 			{{ Form::close() }}
 
 		</div>
