@@ -70,6 +70,7 @@ class PostsController extends BaseController {
 		{
 			//function to save the posts
 			$post = new Post();
+			$post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
 			$post->message = Input::get('message');
 			$post->save();
