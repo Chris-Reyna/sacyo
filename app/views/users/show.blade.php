@@ -24,9 +24,24 @@
 				<td> {{{ $user->email }}}</td>
 				<td> {{{ $user->address }}}</td>
 				<td> {{{ $user->phone}}}</td>
-
-				{{{ $user->children->first_name }}}
-			</tr>							
+			</tr>
+		</table>
+		<table class="table table-striped">
+			<tr class="mboardtablehead">
+				<th>SIGNUP DATE</th>
+				<th>FIRSTNAME</th>
+				<th>LASTNAME</th>
+				<th>GENDER</th>
+				<th>BIRTHDAY</th>	
+			</tr>	
+			<tr>
+				<td>{{{ $user->childrens->first_name }}}</td>
+				<td>{{{ $child->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A ') }}}</td>
+				<td>{{{ $child->first_name}}}</td>
+				<td> {{{ $child->last_name }}}</td>
+				<td> {{{ $child->gender }}}</td>
+				<td> {{{ $child->DOB}}}</td>
+			</tr>									
 		</table>
 	</div>	
 </div>
