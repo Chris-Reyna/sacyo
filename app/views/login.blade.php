@@ -9,7 +9,6 @@
 	    <input name="password" type="password" class="form-control" placeholder="Password" required>
 	    <button class="btn btn-lg btn-primary active" type="submit">Login</button>
 </div>
-
 {{ Form::close() }}
 
 @stop
