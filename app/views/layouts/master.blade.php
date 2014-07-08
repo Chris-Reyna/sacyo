@@ -29,6 +29,15 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{action('PostsController@index')}}">Message Board</a></li>
         <li><a href="{{action('UsersController@create')}}">Register with St.Ann's</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photos <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>{{ link_to('gallery', 'Gallery') }}</li>
+            <li>{{ link_to('gallery/new/album', 'New album') }}</li>
+            <li>{{ link_to('gallery/new/photo', 'Add photo') }}</li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://ncaa.homestead.com/">West Zone Home Page</a></li>
