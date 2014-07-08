@@ -28,7 +28,6 @@
 		<a class='links' href="{{{ action('PostsController@edit', $post->id)}}}">Edit Post</a> |
 		
 		<a class='links' href="{{{ action('PostsController@index')}}}">Return to Message Listing</a>
-		
 	</div>	
 			
 @stop
