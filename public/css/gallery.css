@@ -5,6 +5,8 @@ body {
   color: #000;
   background-color: #999;
 }
+
+/* css for a tags in gallery*/
 .Ahead a {
 	color: #FFF;
 	border-style: solid;
@@ -17,6 +19,15 @@ body {
 	box-shadow: 0px 6px 3px -3px #777777; 
 	position: relative;
 }
+/* changes return ti album link to white*/
 #edreturn {
 	color: #FFF;
+}
+
+.albumheadlines {
+
+	text-align: center;
+	font-size: 80px;
+	font-family: monospace;
+	
 }
