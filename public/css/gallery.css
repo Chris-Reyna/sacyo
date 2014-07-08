@@ -1,0 +1,16 @@
+
+/* custom css for gallery pages*/
+body {
+  
+  color: #000;
+  background-color: #999;
+}
+.Ahead a {
+	color: #FFF;
+	border-style: solid;
+	border-color: #000;
+	background-color: #000; 
+}
+#edreturn {
+	color: #FFF;
+}
