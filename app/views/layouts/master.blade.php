@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/carousel.css">
     <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
 
     @yield('topscript')
     
